@@ -151,7 +151,7 @@ void ANO_DT_Data_Exchange(void)
 	else if(f.send_user)
 	{
 		f.send_user = 0;
-		ANO_DT_Send_User();
+		ANO_DT_Send_User(fs);
 	}
 ///////////////////////////////////////////////////////////////////////////////////////
 	else if(f.send_senser)
@@ -451,46 +451,55 @@ void ANO_DT_GetParame(u16 num,s32 data)
 }
 void ANO_DT_ParListToParUsed(void)
 {
-	Ano_Parame.set.pid_att_1level[ROL][KP] = (float) ParValList[PAR_PID_1_P] / 1000;
-	Ano_Parame.set.pid_att_1level[ROL][KI] = (float) ParValList[PAR_PID_1_I] / 1000;
-	Ano_Parame.set.pid_att_1level[ROL][KD] = (float) ParValList[PAR_PID_1_D] / 1000;
-	Ano_Parame.set.pid_att_1level[PIT][KP] = (float) ParValList[PAR_PID_2_P] / 1000;
-	Ano_Parame.set.pid_att_1level[PIT][KI] = (float) ParValList[PAR_PID_2_I] / 1000;
-	Ano_Parame.set.pid_att_1level[PIT][KD] = (float) ParValList[PAR_PID_2_D] / 1000;
-	Ano_Parame.set.pid_att_1level[YAW][KP] = (float) ParValList[PAR_PID_3_P] / 1000;
-	Ano_Parame.set.pid_att_1level[YAW][KI] = (float) ParValList[PAR_PID_3_I] / 1000;
-	Ano_Parame.set.pid_att_1level[YAW][KD] = (float) ParValList[PAR_PID_3_D] / 1000;
+//	Ano_Parame.set.pid_att_1level[ROL][KP] = (float) ParValList[PAR_PID_1_P] / 1000;
+//	Ano_Parame.set.pid_att_1level[ROL][KI] = (float) ParValList[PAR_PID_1_I] / 1000;
+//	Ano_Parame.set.pid_att_1level[ROL][KD] = (float) ParValList[PAR_PID_1_D] / 1000;
+//	Ano_Parame.set.pid_att_1level[PIT][KP] = (float) ParValList[PAR_PID_2_P] / 1000;
+//	Ano_Parame.set.pid_att_1level[PIT][KI] = (float) ParValList[PAR_PID_2_I] / 1000;
+//	Ano_Parame.set.pid_att_1level[PIT][KD] = (float) ParValList[PAR_PID_2_D] / 1000;
+//	Ano_Parame.set.pid_att_1level[YAW][KP] = (float) ParValList[PAR_PID_3_P] / 1000;
+//	Ano_Parame.set.pid_att_1level[YAW][KI] = (float) ParValList[PAR_PID_3_I] / 1000;
+//	Ano_Parame.set.pid_att_1level[YAW][KD] = (float) ParValList[PAR_PID_3_D] / 1000;
+	Ano_Parame.set.pid_att_1level[ROL][KP] = (float) ParValList[PAR_PID_1_P] / 100;
+	Ano_Parame.set.pid_att_1level[ROL][KI] = (float) ParValList[PAR_PID_1_I] / 100;
+	Ano_Parame.set.pid_att_1level[ROL][KD] = (float) ParValList[PAR_PID_1_D] / 100;
+	Ano_Parame.set.pid_att_1level[PIT][KP] = (float) ParValList[PAR_PID_2_P] / 100;
+	Ano_Parame.set.pid_att_1level[PIT][KI] = (float) ParValList[PAR_PID_2_I] / 100;
+	Ano_Parame.set.pid_att_1level[PIT][KD] = (float) ParValList[PAR_PID_2_D] / 100;
+	Ano_Parame.set.pid_att_1level[YAW][KP] = (float) ParValList[PAR_PID_3_P] / 100;
+	Ano_Parame.set.pid_att_1level[YAW][KI] = (float) ParValList[PAR_PID_3_I] / 100;
+	Ano_Parame.set.pid_att_1level[YAW][KD] = (float) ParValList[PAR_PID_3_D] / 100;
 	
-	Ano_Parame.set.pid_att_2level[ROL][KP] = (float) ParValList[PAR_PID_4_P] / 1000;
-	Ano_Parame.set.pid_att_2level[ROL][KI] = (float) ParValList[PAR_PID_4_I] / 1000;
-	Ano_Parame.set.pid_att_2level[ROL][KD] = (float) ParValList[PAR_PID_4_D] / 1000;
-	Ano_Parame.set.pid_att_2level[PIT][KP] = (float) ParValList[PAR_PID_5_P] / 1000;
-	Ano_Parame.set.pid_att_2level[PIT][KI] = (float) ParValList[PAR_PID_5_I] / 1000;
-	Ano_Parame.set.pid_att_2level[PIT][KD] = (float) ParValList[PAR_PID_5_D] / 1000;
-	Ano_Parame.set.pid_att_2level[YAW][KP] = (float) ParValList[PAR_PID_6_P] / 1000;
-	Ano_Parame.set.pid_att_2level[YAW][KI] = (float) ParValList[PAR_PID_6_I] / 1000;
-	Ano_Parame.set.pid_att_2level[YAW][KD] = (float) ParValList[PAR_PID_6_D] / 1000;
+	Ano_Parame.set.pid_att_2level[ROL][KP] = (float) ParValList[PAR_PID_4_P] / 100;
+	Ano_Parame.set.pid_att_2level[ROL][KI] = (float) ParValList[PAR_PID_4_I] / 100;
+	Ano_Parame.set.pid_att_2level[ROL][KD] = (float) ParValList[PAR_PID_4_D] / 100;
+	Ano_Parame.set.pid_att_2level[PIT][KP] = (float) ParValList[PAR_PID_5_P] / 100;
+	Ano_Parame.set.pid_att_2level[PIT][KI] = (float) ParValList[PAR_PID_5_I] / 100;
+	Ano_Parame.set.pid_att_2level[PIT][KD] = (float) ParValList[PAR_PID_5_D] / 100;
+	Ano_Parame.set.pid_att_2level[YAW][KP] = (float) ParValList[PAR_PID_6_P] / 100;
+	Ano_Parame.set.pid_att_2level[YAW][KI] = (float) ParValList[PAR_PID_6_I] / 100;
+	Ano_Parame.set.pid_att_2level[YAW][KD] = (float) ParValList[PAR_PID_6_D] / 100;
 	
-	Ano_Parame.set.pid_alt_1level[KP] = (float) ParValList[PAR_PID_7_P] / 1000;
-	Ano_Parame.set.pid_alt_1level[KI] = (float) ParValList[PAR_PID_7_I] / 1000;
-	Ano_Parame.set.pid_alt_1level[KD] = (float) ParValList[PAR_PID_7_D] / 1000;
-	Ano_Parame.set.pid_alt_2level[KP] = (float) ParValList[PAR_PID_8_P] / 1000;
-	Ano_Parame.set.pid_alt_2level[KI] = (float) ParValList[PAR_PID_8_I] / 1000;
-	Ano_Parame.set.pid_alt_2level[KD] = (float) ParValList[PAR_PID_8_D] / 1000;
+	Ano_Parame.set.pid_alt_1level[KP] = (float) ParValList[PAR_PID_7_P] / 100;
+	Ano_Parame.set.pid_alt_1level[KI] = (float) ParValList[PAR_PID_7_I] / 100;
+	Ano_Parame.set.pid_alt_1level[KD] = (float) ParValList[PAR_PID_7_D] / 100;
+	Ano_Parame.set.pid_alt_2level[KP] = (float) ParValList[PAR_PID_8_P] / 100;
+	Ano_Parame.set.pid_alt_2level[KI] = (float) ParValList[PAR_PID_8_I] / 100;
+	Ano_Parame.set.pid_alt_2level[KD] = (float) ParValList[PAR_PID_8_D] / 100;
 	
-	Ano_Parame.set.pid_loc_1level[KP] = (float) ParValList[PAR_PID_9_P] / 1000; 
-	Ano_Parame.set.pid_loc_1level[KI] = (float) ParValList[PAR_PID_9_I] / 1000; 
-	Ano_Parame.set.pid_loc_1level[KD] = (float) ParValList[PAR_PID_9_D] / 1000; 
-	Ano_Parame.set.pid_loc_2level[KP] = (float) ParValList[PAR_PID_10_P] / 1000; 
-	Ano_Parame.set.pid_loc_2level[KI] = (float) ParValList[PAR_PID_10_I] / 1000; 
-	Ano_Parame.set.pid_loc_2level[KD] = (float) ParValList[PAR_PID_10_D] / 1000; 
+	Ano_Parame.set.pid_loc_1level[KP] = (float) ParValList[PAR_PID_9_P] / 100; 
+	Ano_Parame.set.pid_loc_1level[KI] = (float) ParValList[PAR_PID_9_I] / 100; 
+	Ano_Parame.set.pid_loc_1level[KD] = (float) ParValList[PAR_PID_9_D] / 100; 
+	Ano_Parame.set.pid_loc_2level[KP] = (float) ParValList[PAR_PID_10_P] / 100; 
+	Ano_Parame.set.pid_loc_2level[KI] = (float) ParValList[PAR_PID_10_I] / 100; 
+	Ano_Parame.set.pid_loc_2level[KD] = (float) ParValList[PAR_PID_10_D] / 100; 
 	
-	Ano_Parame.set.pid_gps_loc_1level[KP] = (float) ParValList[PAR_PID_11_P] / 1000; 
-	Ano_Parame.set.pid_gps_loc_1level[KI] = (float) ParValList[PAR_PID_11_I] / 1000; 
-	Ano_Parame.set.pid_gps_loc_1level[KD] = (float) ParValList[PAR_PID_11_D] / 1000; 
-	Ano_Parame.set.pid_gps_loc_2level[KP] = (float) ParValList[PAR_PID_12_P] / 1000; 
-	Ano_Parame.set.pid_gps_loc_2level[KI] = (float) ParValList[PAR_PID_12_I] / 1000; 
-	Ano_Parame.set.pid_gps_loc_2level[KD] = (float) ParValList[PAR_PID_12_D] / 1000; 
+	Ano_Parame.set.pid_gps_loc_1level[KP] = (float) ParValList[PAR_PID_11_P] / 100; 
+	Ano_Parame.set.pid_gps_loc_1level[KI] = (float) ParValList[PAR_PID_11_I] / 100; 
+	Ano_Parame.set.pid_gps_loc_1level[KD] = (float) ParValList[PAR_PID_11_D] / 100; 
+	Ano_Parame.set.pid_gps_loc_2level[KP] = (float) ParValList[PAR_PID_12_P] / 100; 
+	Ano_Parame.set.pid_gps_loc_2level[KI] = (float) ParValList[PAR_PID_12_I] / 100; 
+	Ano_Parame.set.pid_gps_loc_2level[KD] = (float) ParValList[PAR_PID_12_D] / 100; 
 	
 	if(ParValList[PAR_RCINMODE] == 0)
 		Ano_Parame.set.pwmInMode = PWM;
@@ -515,46 +524,46 @@ void ANO_DT_ParListToParUsed(void)
 }
 void ANO_DT_ParUsedToParList(void)
 {
-	ParValList[PAR_PID_1_P] = Ano_Parame.set.pid_att_1level[ROL][KP] * 1000;
-	ParValList[PAR_PID_1_I] = Ano_Parame.set.pid_att_1level[ROL][KI] * 1000;
-	ParValList[PAR_PID_1_D] = Ano_Parame.set.pid_att_1level[ROL][KD] * 1000;
-	ParValList[PAR_PID_2_P] = Ano_Parame.set.pid_att_1level[PIT][KP] * 1000;
-	ParValList[PAR_PID_2_I] = Ano_Parame.set.pid_att_1level[PIT][KI] * 1000;
-	ParValList[PAR_PID_2_D] = Ano_Parame.set.pid_att_1level[PIT][KD] * 1000;
-	ParValList[PAR_PID_3_P] = Ano_Parame.set.pid_att_1level[YAW][KP] * 1000;
-	ParValList[PAR_PID_3_I] = Ano_Parame.set.pid_att_1level[YAW][KI] * 1000;
-	ParValList[PAR_PID_3_D] = Ano_Parame.set.pid_att_1level[YAW][KD] * 1000;
+	ParValList[PAR_PID_1_P] = Ano_Parame.set.pid_att_1level[ROL][KP] * 100;
+	ParValList[PAR_PID_1_I] = Ano_Parame.set.pid_att_1level[ROL][KI] * 100;
+	ParValList[PAR_PID_1_D] = Ano_Parame.set.pid_att_1level[ROL][KD] * 100;
+	ParValList[PAR_PID_2_P] = Ano_Parame.set.pid_att_1level[PIT][KP] * 100;
+	ParValList[PAR_PID_2_I] = Ano_Parame.set.pid_att_1level[PIT][KI] * 100;
+	ParValList[PAR_PID_2_D] = Ano_Parame.set.pid_att_1level[PIT][KD] * 100;
+	ParValList[PAR_PID_3_P] = Ano_Parame.set.pid_att_1level[YAW][KP] * 100;
+	ParValList[PAR_PID_3_I] = Ano_Parame.set.pid_att_1level[YAW][KI] * 100;
+	ParValList[PAR_PID_3_D] = Ano_Parame.set.pid_att_1level[YAW][KD] * 100;
 	
-	ParValList[PAR_PID_4_P] = Ano_Parame.set.pid_att_2level[ROL][KP] * 1000;
-	ParValList[PAR_PID_4_I] = Ano_Parame.set.pid_att_2level[ROL][KI] * 1000;
-	ParValList[PAR_PID_4_D] = Ano_Parame.set.pid_att_2level[ROL][KD] * 1000;
-	ParValList[PAR_PID_5_P] = Ano_Parame.set.pid_att_2level[PIT][KP] * 1000;
-	ParValList[PAR_PID_5_I] = Ano_Parame.set.pid_att_2level[PIT][KI] * 1000;
-	ParValList[PAR_PID_5_D] = Ano_Parame.set.pid_att_2level[PIT][KD] * 1000;
-	ParValList[PAR_PID_6_P] = Ano_Parame.set.pid_att_2level[YAW][KP] * 1000;
-	ParValList[PAR_PID_6_I] = Ano_Parame.set.pid_att_2level[YAW][KI] * 1000;
-	ParValList[PAR_PID_6_D] = Ano_Parame.set.pid_att_2level[YAW][KD] * 1000;
+	ParValList[PAR_PID_4_P] = Ano_Parame.set.pid_att_2level[ROL][KP] * 100;
+	ParValList[PAR_PID_4_I] = Ano_Parame.set.pid_att_2level[ROL][KI] * 100;
+	ParValList[PAR_PID_4_D] = Ano_Parame.set.pid_att_2level[ROL][KD] * 100;
+	ParValList[PAR_PID_5_P] = Ano_Parame.set.pid_att_2level[PIT][KP] * 100;
+	ParValList[PAR_PID_5_I] = Ano_Parame.set.pid_att_2level[PIT][KI] * 100;
+	ParValList[PAR_PID_5_D] = Ano_Parame.set.pid_att_2level[PIT][KD] * 100;
+	ParValList[PAR_PID_6_P] = Ano_Parame.set.pid_att_2level[YAW][KP] * 100;
+	ParValList[PAR_PID_6_I] = Ano_Parame.set.pid_att_2level[YAW][KI] * 100;
+	ParValList[PAR_PID_6_D] = Ano_Parame.set.pid_att_2level[YAW][KD] * 100;
 	
-	ParValList[PAR_PID_7_P] = Ano_Parame.set.pid_alt_1level[KP] * 1000;
-	ParValList[PAR_PID_7_I] = Ano_Parame.set.pid_alt_1level[KI] * 1000;
-	ParValList[PAR_PID_7_D] = Ano_Parame.set.pid_alt_1level[KD] * 1000;
-	ParValList[PAR_PID_8_P] = Ano_Parame.set.pid_alt_2level[KP] * 1000;
-	ParValList[PAR_PID_8_I] = Ano_Parame.set.pid_alt_2level[KI] * 1000;
-	ParValList[PAR_PID_8_D] = Ano_Parame.set.pid_alt_2level[KD] * 1000;
+	ParValList[PAR_PID_7_P] = Ano_Parame.set.pid_alt_1level[KP] * 100;
+	ParValList[PAR_PID_7_I] = Ano_Parame.set.pid_alt_1level[KI] * 100;
+	ParValList[PAR_PID_7_D] = Ano_Parame.set.pid_alt_1level[KD] * 100;
+	ParValList[PAR_PID_8_P] = Ano_Parame.set.pid_alt_2level[KP] * 100;
+	ParValList[PAR_PID_8_I] = Ano_Parame.set.pid_alt_2level[KI] * 100;
+	ParValList[PAR_PID_8_D] = Ano_Parame.set.pid_alt_2level[KD] * 100;
 	
-	ParValList[PAR_PID_9_P] = Ano_Parame.set.pid_loc_1level[KP] * 1000;
-	ParValList[PAR_PID_9_I] = Ano_Parame.set.pid_loc_1level[KI] * 1000;
-	ParValList[PAR_PID_9_D] = Ano_Parame.set.pid_loc_1level[KD] * 1000;
-	ParValList[PAR_PID_10_P] = Ano_Parame.set.pid_loc_2level[KP] * 1000;
-	ParValList[PAR_PID_10_I] = Ano_Parame.set.pid_loc_2level[KI] * 1000;
-	ParValList[PAR_PID_10_D] = Ano_Parame.set.pid_loc_2level[KD] * 1000;
+	ParValList[PAR_PID_9_P] = Ano_Parame.set.pid_loc_1level[KP] * 100;
+	ParValList[PAR_PID_9_I] = Ano_Parame.set.pid_loc_1level[KI] * 100;
+	ParValList[PAR_PID_9_D] = Ano_Parame.set.pid_loc_1level[KD] * 100;
+	ParValList[PAR_PID_10_P] = Ano_Parame.set.pid_loc_2level[KP] * 100;
+	ParValList[PAR_PID_10_I] = Ano_Parame.set.pid_loc_2level[KI] * 100;
+	ParValList[PAR_PID_10_D] = Ano_Parame.set.pid_loc_2level[KD] * 100;
 
-	ParValList[PAR_PID_11_P] = Ano_Parame.set.pid_gps_loc_1level[KP] * 1000;
-	ParValList[PAR_PID_11_I] = Ano_Parame.set.pid_gps_loc_1level[KI] * 1000;
-	ParValList[PAR_PID_11_D] = Ano_Parame.set.pid_gps_loc_1level[KD] * 1000;
-	ParValList[PAR_PID_12_P] = Ano_Parame.set.pid_gps_loc_2level[KP] * 1000;
-	ParValList[PAR_PID_12_I] = Ano_Parame.set.pid_gps_loc_2level[KI] * 1000;
-	ParValList[PAR_PID_12_D] = Ano_Parame.set.pid_gps_loc_2level[KD] * 1000;
+	ParValList[PAR_PID_11_P] = Ano_Parame.set.pid_gps_loc_1level[KP] * 100;
+	ParValList[PAR_PID_11_I] = Ano_Parame.set.pid_gps_loc_1level[KI] * 100;
+	ParValList[PAR_PID_11_D] = Ano_Parame.set.pid_gps_loc_1level[KD] * 100;
+	ParValList[PAR_PID_12_P] = Ano_Parame.set.pid_gps_loc_2level[KP] * 100;
+	ParValList[PAR_PID_12_I] = Ano_Parame.set.pid_gps_loc_2level[KI] * 100;
+	ParValList[PAR_PID_12_D] = Ano_Parame.set.pid_gps_loc_2level[KD] * 100;
 	
 	if(Ano_Parame.set.pwmInMode == PWM)
 		ParValList[PAR_RCINMODE] = 0;
@@ -1096,7 +1105,7 @@ void ANO_DT_SendOmvLt(u8 sta, s16 angle, s16 offset, u8 pflag, s16 x, s16 y, u8 
 #include "Ano_OPMV_CBTracking_Ctrl.h"
 #include "Drv_OpenMV.h"
 #include "Ano_OF_DecoFusion.h"
-void ANO_DT_Send_User()
+void ANO_DT_Send_User(_flight_state_st fs)
 {
 	u8 _cnt=0;
 	s16 _temp;
@@ -1127,30 +1136,57 @@ void ANO_DT_Send_User()
 ////=====================================
 ////=====================================
 	
-	_temp = (s16)(ano_opmv_cbt_ctrl.opmv_pos[1] );//         //1
+////	_temp = (s16)(ano_opmv_cbt_ctrl.opmv_pos[1] );//         //1
+////	data_to_send[_cnt++]=BYTE1(_temp);
+////	data_to_send[_cnt++]=BYTE0(_temp);		
+////	
+////	_temp = (s16)(ano_opmv_cbt_ctrl.decou_pos_pixel[1] );//         //2
+////	data_to_send[_cnt++]=BYTE1(_temp);
+////	data_to_send[_cnt++]=BYTE0(_temp);	
+////		
+////	_temp = (s16)(ano_opmv_cbt_ctrl.ground_pos_err_h_cm[1] );//         //3
+////	data_to_send[_cnt++]=BYTE1(_temp);
+////	data_to_send[_cnt++]=BYTE0(_temp);
+////	
+////	_temp = (s16)(ano_opmv_cbt_ctrl.ground_pos_err_d_h_cmps[1] );//4
+////	data_to_send[_cnt++]=BYTE1(_temp);
+////	data_to_send[_cnt++]=BYTE0(_temp);	
+////	
+////	_temp = (s16)(ano_opmv_cbt_ctrl.target_gnd_velocity_cmps[1]); //5
+////	data_to_send[_cnt++]=BYTE1(_temp);
+////	data_to_send[_cnt++]=BYTE0(_temp);	
+
+////	_temp = (s16)(ano_opmv_cbt_ctrl.exp_velocity_h_cmps[1]); //6
+////	data_to_send[_cnt++]=BYTE1(_temp);
+////	data_to_send[_cnt++]=BYTE0(_temp);	
+
+/////==================================
+///====================================
+
+
+	_temp = (s16)(fs.speed_set_h[X]);//         //1
+	data_to_send[_cnt++]=BYTE1(_temp);
+	data_to_send[_cnt++]=BYTE0(_temp);	
+	
+	_temp = (s16)(fs.speed_set_h[Y]);//         //2
 	data_to_send[_cnt++]=BYTE1(_temp);
 	data_to_send[_cnt++]=BYTE0(_temp);		
 	
-	_temp = (s16)(ano_opmv_cbt_ctrl.decou_pos_pixel[1] );//         //2
-	data_to_send[_cnt++]=BYTE1(_temp);
-	data_to_send[_cnt++]=BYTE0(_temp);	
-		
-	_temp = (s16)(ano_opmv_cbt_ctrl.ground_pos_err_h_cm[1] );//         //3
+	_temp = (s16)(fs.speed_set_h[Z]);//         //3
 	data_to_send[_cnt++]=BYTE1(_temp);
 	data_to_send[_cnt++]=BYTE0(_temp);
 	
-	_temp = (s16)(ano_opmv_cbt_ctrl.ground_pos_err_d_h_cmps[1] );//4
-	data_to_send[_cnt++]=BYTE1(_temp);
-	data_to_send[_cnt++]=BYTE0(_temp);	
-	
-	_temp = (s16)(ano_opmv_cbt_ctrl.target_gnd_velocity_cmps[1]); //5
-	data_to_send[_cnt++]=BYTE1(_temp);
-	data_to_send[_cnt++]=BYTE0(_temp);	
+//	_temp = (s16)(mc.ct_val_rol);//         //4
+//	data_to_send[_cnt++]=BYTE1(_temp);
+//	data_to_send[_cnt++]=BYTE0(_temp);	
 
-	_temp = (s16)(ano_opmv_cbt_ctrl.exp_velocity_h_cmps[1]); //6
-	data_to_send[_cnt++]=BYTE1(_temp);
-	data_to_send[_cnt++]=BYTE0(_temp);	
-
+//	_temp = (s16)(mc.ct_val_pit);//         //5
+//	data_to_send[_cnt++]=BYTE1(_temp);
+//	data_to_send[_cnt++]=BYTE0(_temp);
+//	
+//	_temp = (s16)(mc.ct_val_yaw);//         //6
+//	data_to_send[_cnt++]=BYTE1(_temp);
+//	data_to_send[_cnt++]=BYTE0(_temp);
 ////=====================================
 //=====================================
 //extern s32 sensor_val_ref[];

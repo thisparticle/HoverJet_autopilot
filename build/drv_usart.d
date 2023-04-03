@@ -25,10 +25,13 @@
 .\build\drv_usart.o: .\Libraries\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_wwdg.h
 .\build\drv_usart.o: .\Libraries\STM32F4xx_StdPeriph_Driver\inc\misc.h
 .\build\drv_usart.o: .\SRC\applications\Ano_DT.h
-.\build\drv_usart.o: .\SRC\applications\Ano_OF.h
-.\build\drv_usart.o: SRC\drivers\Drv_OpenMV.h
+.\build\drv_usart.o: .\SRC\fc_specific\Ano_FlightCtrl.h
 .\build\drv_usart.o: .\SRC\fc_general\Ano_FcData.h
 .\build\drv_usart.o: .\SRC\fc_specific\config.h
+.\build\drv_usart.o: .\SRC\fc_general\Ano_Filter.h
+.\build\drv_usart.o: .\SRC\fc_general\Ano_Math.h
+.\build\drv_usart.o: .\SRC\applications\Ano_OF.h
+.\build\drv_usart.o: SRC\drivers\Drv_OpenMV.h
 .\build\drv_usart.o: SRC\drivers\Drv_laser.h
 .\build\drv_usart.o: .\SRC\applications\include.h
 .\build\drv_usart.o: .\SRC\applications\Ano_Scheduler.h
@@ -41,6 +44,4 @@
 .\build\drv_usart.o: .\SRC\applications\include.h
 .\build\drv_usart.o: SRC\drivers\Drv_UP_Flow.h
 .\build\drv_usart.o: .\SRC\applications\Ano_UWB.h
-.\build\drv_usart.o: .\SRC\fc_general\Ano_Filter.h
-.\build\drv_usart.o: .\SRC\fc_general\Ano_Math.h
 .\build\drv_usart.o: .\SRC\fc_general\Ano_Imu.h

@@ -34,6 +34,7 @@
 .\build\ano_flightdatacal.o: .\SRC\applications\Ano_Scheduler.h
 .\build\ano_flightdatacal.o: .\SRC\applications\BSP_Init.h
 .\build\ano_flightdatacal.o: .\SRC\applications\Ano_DT.h
+.\build\ano_flightdatacal.o: .\SRC\fc_specific\Ano_FlightCtrl.h
 .\build\ano_flightdatacal.o: .\SRC\applications\Ano_Parameter.h
 .\build\ano_flightdatacal.o: .\SRC\applications\Ano_USB.h
 .\build\ano_flightdatacal.o: .\SRC\drivers\Drv_time.h
@@ -46,7 +47,6 @@
 .\build\ano_flightdatacal.o: .\SRC\drivers\Drv_ak8975.h
 .\build\ano_flightdatacal.o: .\SRC\fc_general\Ano_MotionCal.h
 .\build\ano_flightdatacal.o: .\SRC\drivers\Drv_laser.h
-.\build\ano_flightdatacal.o: SRC\fc_specific\Ano_FlightCtrl.h
 .\build\ano_flightdatacal.o: .\SRC\drivers\Drv_led.h
 .\build\ano_flightdatacal.o: .\SRC\applications\Ano_OF.h
 .\build\ano_flightdatacal.o: .\SRC\fc_general\Ano_Sensor_Basic.h

@@ -34,6 +34,8 @@
 .\build\ano_motorctrl.o: .\SRC\applications\Ano_Scheduler.h
 .\build\ano_motorctrl.o: .\SRC\applications\BSP_Init.h
 .\build\ano_motorctrl.o: .\SRC\applications\Ano_DT.h
+.\build\ano_motorctrl.o: .\SRC\fc_specific\Ano_FlightCtrl.h
+.\build\ano_motorctrl.o: .\SRC\fc_general\Ano_Filter.h
 .\build\ano_motorctrl.o: .\SRC\applications\Ano_Parameter.h
 .\build\ano_motorctrl.o: .\SRC\applications\Ano_USB.h
 .\build\ano_motorctrl.o: .\SRC\drivers\Drv_time.h
@@ -45,5 +47,4 @@
 .\build\ano_motorctrl.o: .\SRC\fc_general\Ano_Imu.h
 .\build\ano_motorctrl.o: .\SRC\drivers\Drv_pwm_out.h
 .\build\ano_motorctrl.o: .\SRC\fc_general\Ano_MotionCal.h
-.\build\ano_motorctrl.o: .\SRC\fc_general\Ano_Filter.h
 .\build\ano_motorctrl.o: .\SRC\fc_general\Ano_Navigate.h

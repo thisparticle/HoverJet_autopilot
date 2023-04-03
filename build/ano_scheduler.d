@@ -29,6 +29,9 @@
 .\build\ano_scheduler.o: .\SRC\fc_specific\config.h
 .\build\ano_scheduler.o: SRC\applications\BSP_Init.h
 .\build\ano_scheduler.o: SRC\applications\Ano_DT.h
+.\build\ano_scheduler.o: .\SRC\fc_specific\Ano_FlightCtrl.h
+.\build\ano_scheduler.o: .\SRC\fc_general\Ano_Filter.h
+.\build\ano_scheduler.o: .\SRC\fc_general\Ano_Math.h
 .\build\ano_scheduler.o: SRC\applications\Ano_Parameter.h
 .\build\ano_scheduler.o: SRC\applications\Ano_USB.h
 .\build\ano_scheduler.o: .\SRC\drivers\Drv_time.h
@@ -41,9 +44,6 @@
 .\build\ano_scheduler.o: .\SRC\drivers\Drv_icm20602.h
 .\build\ano_scheduler.o: .\SRC\drivers\Drv_ak8975.h
 .\build\ano_scheduler.o: .\SRC\drivers\Drv_spl06.h
-.\build\ano_scheduler.o: .\SRC\fc_specific\Ano_FlightCtrl.h
-.\build\ano_scheduler.o: .\SRC\fc_general\Ano_Filter.h
-.\build\ano_scheduler.o: .\SRC\fc_general\Ano_Math.h
 .\build\ano_scheduler.o: .\SRC\fc_specific\Ano_FlightDataCal.h
 .\build\ano_scheduler.o: .\SRC\fc_specific\Ano_AttCtrl.h
 .\build\ano_scheduler.o: .\SRC\fc_general\Ano_Pid.h

@@ -29,6 +29,9 @@
 .\build\bsp_init.o: SRC\applications\Ano_Scheduler.h
 .\build\bsp_init.o: SRC\applications\BSP_Init.h
 .\build\bsp_init.o: SRC\applications\Ano_DT.h
+.\build\bsp_init.o: .\SRC\fc_specific\Ano_FlightCtrl.h
+.\build\bsp_init.o: .\SRC\fc_general\Ano_Filter.h
+.\build\bsp_init.o: .\SRC\fc_general\Ano_Math.h
 .\build\bsp_init.o: SRC\applications\Ano_Parameter.h
 .\build\bsp_init.o: SRC\applications\Ano_USB.h
 .\build\bsp_init.o: .\SRC\drivers\Drv_time.h
@@ -46,9 +49,6 @@
 .\build\bsp_init.o: .\SRC\drivers\Drv_i2c_soft.h
 .\build\bsp_init.o: D:\rj\MDK\ARM\ARMCC\Bin\..\include\time.h
 .\build\bsp_init.o: .\SRC\drivers\Drv_laser.h
-.\build\bsp_init.o: .\SRC\fc_specific\Ano_FlightCtrl.h
-.\build\bsp_init.o: .\SRC\fc_general\Ano_Filter.h
-.\build\bsp_init.o: .\SRC\fc_general\Ano_Math.h
 .\build\bsp_init.o: .\SRC\drivers\Drv_adc.h
 .\build\bsp_init.o: .\SRC\drivers\Drv_heating.h
 .\build\bsp_init.o: SRC\applications\Ano_RC.h

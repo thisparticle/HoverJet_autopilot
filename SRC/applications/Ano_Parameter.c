@@ -20,29 +20,29 @@ _parameter_state_st para_sta;
 void PID_Rest()
 {
 //---	姿态控制角速度环PID参数
-	Ano_Parame.set.pid_att_1level[ROL][KP] = 4.0f; //姿态控制角速度环PID参数
-	Ano_Parame.set.pid_att_1level[ROL][KI] = 2.0f; //姿态控制角速度环PID参数
-	Ano_Parame.set.pid_att_1level[ROL][KD] = 0.2f; //姿态控制角速度环PID参数
+	Ano_Parame.set.pid_att_1level[ROL][KP] = 100.0f; //姿态控制角速度环PID参数
+	Ano_Parame.set.pid_att_1level[ROL][KI] = 0.0f; //姿态控制角速度环PID参数
+	Ano_Parame.set.pid_att_1level[ROL][KD] = 0.0f; //姿态控制角速度环PID参数
 	
-	Ano_Parame.set.pid_att_1level[PIT][KP] = 4.0f; //姿态控制角速度环PID参数
-	Ano_Parame.set.pid_att_1level[PIT][KI] = 2.0f; //姿态控制角速度环PID参数
-	Ano_Parame.set.pid_att_1level[PIT][KD] = 0.2f; //姿态控制角速度环PID参数
+	Ano_Parame.set.pid_att_1level[PIT][KP] = 100.0f; //姿态控制角速度环PID参数
+	Ano_Parame.set.pid_att_1level[PIT][KI] = 0.0f; //姿态控制角速度环PID参数
+	Ano_Parame.set.pid_att_1level[PIT][KD] = 0.0f; //姿态控制角速度环PID参数
 	
-	Ano_Parame.set.pid_att_1level[YAW][KP] = 6.0f; //姿态控制角速度环PID参数
-	Ano_Parame.set.pid_att_1level[YAW][KI] = 0.5f; //姿态控制角速度环PID参数
+	Ano_Parame.set.pid_att_1level[YAW][KP] = 100.0f; //姿态控制角速度环PID参数
+	Ano_Parame.set.pid_att_1level[YAW][KI] = 0.0f; //姿态控制角速度环PID参数
 	Ano_Parame.set.pid_att_1level[YAW][KD] = 0.0f; //姿态控制角速度环PID参数
 //---	姿态控制角度环PID参数
-	Ano_Parame.set.pid_att_2level[ROL][KP] = 7.0f; //姿态控制角度环PID参数
-	Ano_Parame.set.pid_att_2level[ROL][KI] = 0.0f; //姿态控制角度环PID参数
+	Ano_Parame.set.pid_att_2level[ROL][KP] = 16.0f; //姿态控制角度环PID参数
+	Ano_Parame.set.pid_att_2level[ROL][KI] = 0.02f; //姿态控制角度环PID参数
 	Ano_Parame.set.pid_att_2level[ROL][KD] = 0.00f; //姿态控制角度环PID参数
 	
-	Ano_Parame.set.pid_att_2level[PIT][KP] = 7.0f; //姿态控制角度环PID参数
-	Ano_Parame.set.pid_att_2level[PIT][KI] = 0.0f; //姿态控制角度环PID参数
+	Ano_Parame.set.pid_att_2level[PIT][KP] = 17.0f; //姿态控制角度环PID参数
+	Ano_Parame.set.pid_att_2level[PIT][KI] = 0.02f; //姿态控制角度环PID参数
 	Ano_Parame.set.pid_att_2level[PIT][KD] = 0.00f; //姿态控制角度环PID参数
 	
-	Ano_Parame.set.pid_att_2level[YAW][KP] = 5.0f; //姿态控制角度环PID参数
-	Ano_Parame.set.pid_att_2level[YAW][KI] = 0.0f; //姿态控制角度环PID参数
-	Ano_Parame.set.pid_att_2level[YAW][KD] = 0.5; //姿态控制角度环PID参数	
+	Ano_Parame.set.pid_att_2level[YAW][KP] = 20.0f; //姿态控制角度环PID参数
+	Ano_Parame.set.pid_att_2level[YAW][KI] = 0.02f; //姿态控制角度环PID参数
+	Ano_Parame.set.pid_att_2level[YAW][KD] = 0.00; //姿态控制角度环PID参数	
 //---	高度控制高度速度环PID参数	
 	Ano_Parame.set.pid_alt_1level[KP] = 2.0f;          //高度控制高度速度环PID参数
 	Ano_Parame.set.pid_alt_1level[KI] = 1.0f;          //高度控制高度速度环PID参数
@@ -106,9 +106,9 @@ void Parame_Reset(void)
 	//参数初始化
 	Ano_Parame.set.pwmInMode = PWM;
 	Ano_Parame.set.heatSwitch = 0;
-	Ano_Parame.set.warn_power_voltage = 3.50f *3;///这里乘以几是根据你的电池来改变的
-	Ano_Parame.set.return_home_power_voltage = 3.7f *3;
-	Ano_Parame.set.lowest_power_voltage = 3.4f *3;
+	Ano_Parame.set.warn_power_voltage = 3.50f *6;///这里乘以几是根据你的电池来改变的
+	Ano_Parame.set.return_home_power_voltage = 3.7f *6;
+	Ano_Parame.set.lowest_power_voltage = 3.4f *6;
 	
 	Ano_Parame.set.auto_take_off_height = 0;//cm
 	Ano_Parame.set.auto_take_off_speed = 150;

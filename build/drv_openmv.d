@@ -27,3 +27,6 @@
 .\build\drv_openmv.o: .\Libraries\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_wwdg.h
 .\build\drv_openmv.o: .\Libraries\STM32F4xx_StdPeriph_Driver\inc\misc.h
 .\build\drv_openmv.o: .\SRC\applications\Ano_DT.h
+.\build\drv_openmv.o: .\SRC\fc_specific\Ano_FlightCtrl.h
+.\build\drv_openmv.o: .\SRC\fc_general\Ano_Filter.h
+.\build\drv_openmv.o: .\SRC\fc_general\Ano_Math.h

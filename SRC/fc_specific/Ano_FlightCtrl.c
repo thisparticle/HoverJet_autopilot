@@ -214,7 +214,9 @@ void land_discriminat(s16 dT_ms)
 
 
 /*飞行状态任务*/
-
+/*fixed by czq，2021/4/3
+直接将遥控信号当作期望值
+*/
 void Flight_State_Task(u8 dT_ms,s16 *CH_N)
 {
 	s16 thr_deadzone;
@@ -298,6 +300,20 @@ void Flight_State_Task(u8 dT_ms,s16 *CH_N)
 	fs.speed_set_h[X] = fs.speed_set_h_cms[X];
 	fs.speed_set_h[Y] = fs.speed_set_h_cms[Y];	
 	
+	fs.speed_set_h[X] = CH_N[CH_ROL]/500.0f*23;
+	fs.speed_set_h[Y] = CH_N[CH_PIT]/500.0f*23;
+	fs.speed_set_h[Z] = CH_N[CH_YAW]/500.0f*23;	
+	
+	fs.speed_set_h[X] = my_deadzone(fs.speed_set_h[X],0,3);
+	fs.speed_set_h[Y] = my_deadzone(fs.speed_set_h[Y],0,3);
+	fs.speed_set_h[Z] = my_deadzone(fs.speed_set_h[Z],0,3);
+	
+	//ANO_DT_SendStrVal("CH_N[CH_ROL]:",CH_N[CH_ROL]);
+	//ANO_DT_SendStrVal("CH_N[CH_PIT]:",CH_N[CH_PIT]);
+	//ANO_DT_SendStrVal("CH_N[CH_YAW]:",CH_N[CH_YAW]);
+//	ANO_DT_SendStrVal("fs.speed_set_h[X]:",fs.speed_set_h[X]);
+//	ANO_DT_SendStrVal("fs.speed_set_h[Y]:",fs.speed_set_h[Y]);
+//	ANO_DT_SendStrVal("fs.speed_set_h[Z]:",fs.speed_set_h[Z]);
 	/*调用检测着陆的函数*/
 	land_discriminat(dT_ms);
 	
@@ -532,7 +548,7 @@ u8 flight_mode_old = 255;
 
 void Flight_Mode_Set(u8 dT_ms)
 {
-	Speed_Mode_Switch();
+	Speed_Mode_Switch();///这里是空函数
 
 	
 	if(speed_mode_old != flag.speed_mode) //状态改变

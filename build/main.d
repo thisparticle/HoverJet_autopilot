@@ -29,6 +29,9 @@
 .\build\main.o: SRC\applications\Ano_Scheduler.h
 .\build\main.o: SRC\applications\BSP_Init.h
 .\build\main.o: SRC\applications\Ano_DT.h
+.\build\main.o: .\SRC\fc_specific\Ano_FlightCtrl.h
+.\build\main.o: .\SRC\fc_general\Ano_Filter.h
+.\build\main.o: .\SRC\fc_general\Ano_Math.h
 .\build\main.o: SRC\applications\Ano_Parameter.h
 .\build\main.o: SRC\applications\Ano_USB.h
 .\build\main.o: .\SRC\drivers\Drv_time.h
@@ -36,3 +39,4 @@
 .\build\main.o: .\SRC\drivers\Drv_usart.h
 .\build\main.o: .\SRC\drivers\Drv_Gps.h
 .\build\main.o: .\SRC\applications\include.h
+.\build\main.o: .\SRC\drivers\Drv_pwm_out.h

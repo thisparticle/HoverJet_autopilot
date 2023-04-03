@@ -64,19 +64,22 @@ void Att_1level_PID_Init()
 {
 	arg_1[ROL].kp = Ano_Parame.set.pid_att_1level[ROL][KP];
 	arg_1[ROL].ki = Ano_Parame.set.pid_att_1level[ROL][KI];
-	arg_1[ROL].kd_ex = 0;//0.000f   ;
+	///arg_1[ROL].kd_ex = 0;//0.000f   ;
+	arg_1[ROL].kd_ex = Ano_Parame.set.pid_att_1level[ROL][KD];
 	arg_1[ROL].kd_fb = Ano_Parame.set.pid_att_1level[ROL][KD];
 	arg_1[ROL].k_ff = 0.0f;
 	
 	arg_1[PIT].kp = Ano_Parame.set.pid_att_1level[PIT][KP];
 	arg_1[PIT].ki = Ano_Parame.set.pid_att_1level[PIT][KI];
-	arg_1[PIT].kd_ex = 0;//0.000f   ;
+	///arg_1[PIT].kd_ex = 0;//0.000f   ;
+	arg_1[PIT].kd_ex = Ano_Parame.set.pid_att_1level[PIT][KD];
 	arg_1[PIT].kd_fb = Ano_Parame.set.pid_att_1level[PIT][KD];
 	arg_1[PIT].k_ff = 0.0f;
 
 	arg_1[YAW].kp = Ano_Parame.set.pid_att_1level[YAW][KP];
 	arg_1[YAW].ki = Ano_Parame.set.pid_att_1level[YAW][KI];
-	arg_1[YAW].kd_ex = 0;//0.00f   ;
+	///arg_1[YAW].kd_ex = 0;//0.00f   ;
+	arg_1[YAW].kd_ex = Ano_Parame.set.pid_att_1level[YAW][KD];
 	arg_1[YAW].kd_fb = Ano_Parame.set.pid_att_1level[YAW][KD];
 	arg_1[YAW].k_ff = 0.00f;	
 	
@@ -163,6 +166,8 @@ void Att_2level_Ctrl(float dT_s,s16 *CH_N)
 	/*正负参考ANO坐标参考方向*/
 	att_2l_ct.exp_rol = exp_rol_tmp + att_2l_ct.exp_rol_adj;// + POS_V_DAMPING *imu_data.h_acc[Y];
 	att_2l_ct.exp_pit = exp_pit_tmp + att_2l_ct.exp_pit_adj;// + POS_V_DAMPING *imu_data.h_acc[X];
+//	att_2l_ct.exp_rol = fs.speed_set_h[X];// + POS_V_DAMPING *imu_data.h_acc[Y];
+//	att_2l_ct.exp_pit = fs.speed_set_h[Y];// + POS_V_DAMPING *imu_data.h_acc[X];
 	
 	/*期望角度限幅*/
 	att_2l_ct.exp_rol = LIMIT(att_2l_ct.exp_rol,-MAX_ANGLE,MAX_ANGLE);
@@ -176,11 +181,11 @@ void Att_2level_Ctrl(float dT_s,s16 *CH_N)
 	}
 	else if(flag.speed_mode == 2 )
 	{
-		max_yaw_speed = 220;
+		max_yaw_speed = 50;
 	}
 	else 
 	{
-		max_yaw_speed = 200;
+		max_yaw_speed = 50;
 	}
 	//
 	fc_stv.yaw_pal_limit = max_yaw_speed;
@@ -212,10 +217,17 @@ void Att_2level_Ctrl(float dT_s,s16 *CH_N)
 		}
 	}	
 
+	att_2l_ct.exp_rol = fs.speed_set_h[X];// + POS_V_DAMPING *imu_data.h_acc[Y];
+	att_2l_ct.exp_pit = fs.speed_set_h[Y];// + POS_V_DAMPING *imu_data.h_acc[X];
+	
 	//增量限幅
 	att_1l_ct.set_yaw_speed += LIMIT((set_yaw_av_tmp - att_1l_ct.set_yaw_speed),-30,30);
 	/*设置期望YAW角度*/
-	att_2l_ct.exp_yaw += att_1l_ct.set_yaw_speed *dT_s;
+//	att_2l_ct.exp_yaw += att_1l_ct.set_yaw_speed *dT_s;
+	att_2l_ct.exp_yaw = fs.speed_set_h[Z];
+//	ANO_DT_SendStrVal("att_2l_ct.exp_rol:",att_2l_ct.exp_rol);
+//	ANO_DT_SendStrVal("att_2l_ct.exp_pit:",att_2l_ct.exp_pit);
+//	ANO_DT_SendStrVal("att_2l_ct.exp_yaw:",att_2l_ct.exp_yaw);
 	/*限制为+-180度*/
 	if(att_2l_ct.exp_yaw<-180) att_2l_ct.exp_yaw += 360;
 	else if(att_2l_ct.exp_yaw>180) att_2l_ct.exp_yaw -= 360;	
@@ -278,8 +290,14 @@ void Att_1level_Ctrl(float dT_s)
 
 		/*目标角速度赋值*/
 		 for(u8 i = 0;i<3;i++)
-		{
-			att_1l_ct.exp_angular_velocity[i] = val_2[i].out;// val_2[i].out;//
+		{//LOC_HOLD
+			if(flag.flight_mode == LOC_HOLD){
+			att_1l_ct.exp_angular_velocity[i] = fs.speed_set_h[i];// val_2[i].out;//
+				//ANO_DT_SendStrVal("att_1l_ct.exp_angular_velocity[i]:",att_1l_ct.exp_angular_velocity[i]);
+			}else
+			{
+				att_1l_ct.exp_angular_velocity[i] = val_2[i].out;
+			}
 		}
 	
 		/*目标角速度限幅*/
@@ -316,9 +334,15 @@ void Att_1level_Ctrl(float dT_s)
 	mc.ct_val_pit = X_PROPORTION_X_Y *FINAL_P *ct_val[PIT];
 	mc.ct_val_yaw =                   FINAL_P *ct_val[YAW];
 	/*输出量限幅*/
-	mc.ct_val_rol = LIMIT(mc.ct_val_rol,-1000,1000);
-	mc.ct_val_pit = LIMIT(mc.ct_val_pit,-1000,1000);
-	mc.ct_val_yaw = LIMIT(mc.ct_val_yaw,-400,400);	
+//	mc.ct_val_rol = LIMIT(mc.ct_val_rol,-1000,1000);
+//	mc.ct_val_pit = LIMIT(mc.ct_val_pit,-1000,1000);
+//	mc.ct_val_yaw = LIMIT(mc.ct_val_yaw,-400,400);	
+//		mc.ct_val_rol = LIMIT(mc.ct_val_rol,-30,30);
+//		mc.ct_val_pit = LIMIT(mc.ct_val_pit,-30,30);
+//		mc.ct_val_yaw = LIMIT(mc.ct_val_yaw,-30,30);
+		//ANO_DT_SendStrVal("mc.ct_val_rol:",mc.ct_val_rol);
+// ANO_DT_SendStrVal("mc.ct_val_pit:",mc.ct_val_pit);
+// ANO_DT_SendStrVal("mc.ct_val_yaw:",mc.ct_val_yaw);
 }
 
 _rolling_flag_st rolling_flag;

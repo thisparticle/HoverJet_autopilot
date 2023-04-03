@@ -24,9 +24,12 @@
 .\build\ano_dt.o: .\Libraries\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_usart.h
 .\build\ano_dt.o: .\Libraries\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_wwdg.h
 .\build\ano_dt.o: .\Libraries\STM32F4xx_StdPeriph_Driver\inc\misc.h
-.\build\ano_dt.o: SRC\applications\Ano_RC.h
+.\build\ano_dt.o: .\SRC\fc_specific\Ano_FlightCtrl.h
 .\build\ano_dt.o: .\SRC\fc_general\Ano_FcData.h
 .\build\ano_dt.o: .\SRC\fc_specific\config.h
+.\build\ano_dt.o: .\SRC\fc_general\Ano_Filter.h
+.\build\ano_dt.o: .\SRC\fc_general\Ano_Math.h
+.\build\ano_dt.o: SRC\applications\Ano_RC.h
 .\build\ano_dt.o: SRC\applications\Ano_USB.h
 .\build\ano_dt.o: .\SRC\drivers\Drv_usart.h
 .\build\ano_dt.o: .\SRC\drivers\Drv_time.h
@@ -40,13 +43,10 @@
 .\build\ano_dt.o: .\SRC\drivers\Drv_Gps.h
 .\build\ano_dt.o: .\SRC\applications\include.h
 .\build\ano_dt.o: .\SRC\fc_specific\Ano_MagProcess.h
-.\build\ano_dt.o: .\SRC\fc_general\Ano_Filter.h
-.\build\ano_dt.o: .\SRC\fc_general\Ano_Math.h
 .\build\ano_dt.o: .\SRC\fc_specific\Ano_MotorCtrl.h
 .\build\ano_dt.o: .\SRC\fc_general\Ano_Pid.h
 .\build\ano_dt.o: .\SRC\fc_specific\Ano_Power.h
 .\build\ano_dt.o: .\SRC\drivers\Drv_adc.h
-.\build\ano_dt.o: .\SRC\fc_specific\Ano_FlightCtrl.h
 .\build\ano_dt.o: .\SRC\fc_general\Ano_MotionCal.h
 .\build\ano_dt.o: .\SRC\fc_specific\Ano_FlightDataCal.h
 .\build\ano_dt.o: .\SRC\drivers\Drv_laser.h

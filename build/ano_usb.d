@@ -42,4 +42,9 @@
 .\build\ano_usb.o: .\Libraries\STM32F4xx_StdPeriph_Driver\inc\misc.h
 .\build\ano_usb.o: SRC\applications\usb_config.c
 .\build\ano_usb.o: SRC\applications\Ano_DT.h
+.\build\ano_usb.o: .\SRC\fc_specific\Ano_FlightCtrl.h
+.\build\ano_usb.o: .\SRC\fc_general\Ano_FcData.h
+.\build\ano_usb.o: .\SRC\fc_specific\config.h
+.\build\ano_usb.o: .\SRC\fc_general\Ano_Filter.h
+.\build\ano_usb.o: .\SRC\fc_general\Ano_Math.h
 .\build\ano_usb.o: SRC\applications\Ano_USB.h

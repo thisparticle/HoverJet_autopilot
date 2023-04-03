@@ -36,10 +36,11 @@
 //2000kv以上 0.3f-0.2f
 //==
 #define GYR_ACC_FILTER 0.25f //陀螺仪加速度计滤波系数
-#define FINAL_P 			 0.35f  //电机输出量比例系数
+//#define FINAL_P 			 0.35f  //电机输出量比例系数
+#define FINAL_P 			 1.0f  //电机输出量比例系数
 
 #define MOTOR_ESC_TYPE 1  //2：某些无刷电机带刹车的电调(谨慎测试)  1：无刷电机不带刹车的电调(默认)，
-#define MOTORSNUM 4
+#define MOTORSNUM 6
 
 #define BAT_LOW_VOTAGE 3250    //mV
 #define FLOAW_MAX_HEIGHT  450
@@ -53,9 +54,9 @@
 
 #define MAX_SPEED_ROL 200  //角度每秒
 #define MAX_SPEED_PIT 200  //角度每秒
-#define MAX_SPEED_YAW 250  //角度每秒
+#define MAX_SPEED_YAW 50  //角度每秒
 
-#define MAX_ROLLING_SPEED 1600  //角度每秒
+#define MAX_ROLLING_SPEED 50  //角度每秒
 
 #define MAX_SPEED 500 //最大水平速度，厘米每秒 cm/s
 

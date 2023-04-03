@@ -35,6 +35,7 @@
 .\build\ano_altctrl.o: .\SRC\applications\Ano_Scheduler.h
 .\build\ano_altctrl.o: .\SRC\applications\BSP_Init.h
 .\build\ano_altctrl.o: .\SRC\applications\Ano_DT.h
+.\build\ano_altctrl.o: .\SRC\fc_specific\Ano_FlightCtrl.h
 .\build\ano_altctrl.o: .\SRC\applications\Ano_Parameter.h
 .\build\ano_altctrl.o: .\SRC\applications\Ano_USB.h
 .\build\ano_altctrl.o: .\SRC\drivers\Drv_time.h
@@ -45,7 +46,6 @@
 .\build\ano_altctrl.o: SRC\fc_specific\Ano_MagProcess.h
 .\build\ano_altctrl.o: .\SRC\drivers\Drv_spl06.h
 .\build\ano_altctrl.o: .\SRC\fc_general\Ano_MotionCal.h
-.\build\ano_altctrl.o: SRC\fc_specific\Ano_FlightCtrl.h
 .\build\ano_altctrl.o: SRC\fc_specific\Ano_MotorCtrl.h
 .\build\ano_altctrl.o: SRC\fc_specific\Ano_AttCtrl.h
 .\build\ano_altctrl.o: SRC\fc_specific\Ano_LocCtrl.h

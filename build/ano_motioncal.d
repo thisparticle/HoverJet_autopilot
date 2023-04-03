@@ -33,6 +33,7 @@
 .\build\ano_motioncal.o: .\SRC\applications\Ano_Scheduler.h
 .\build\ano_motioncal.o: .\SRC\applications\BSP_Init.h
 .\build\ano_motioncal.o: .\SRC\applications\Ano_DT.h
+.\build\ano_motioncal.o: .\SRC\fc_specific\Ano_FlightCtrl.h
 .\build\ano_motioncal.o: .\SRC\applications\Ano_Parameter.h
 .\build\ano_motioncal.o: .\SRC\applications\Ano_USB.h
 .\build\ano_motioncal.o: .\SRC\drivers\Drv_time.h

@@ -8,6 +8,9 @@
 #include "include.h"
 #include "Ano_FcData.h"
 
+#include "Drv_pwm_out.h"
+#include "Drv_time.h"
+
 #ifdef  USE_FULL_ASSERT
 void assert_failed(uint8_t* file, uint32_t line)
 { 
@@ -27,6 +30,32 @@ int main(void)
 	{
 		Scheduler_Run();			//运行任务调度器，所有系统功能，除了中断服务函数，都在任务调度器内完成
 	}
+	//PWM_Out_Init();
+//	while(1){
+//		//Set_Channel5_Throttle(0);
+////		Set_Channel1_Angle(-30);
+////		Set_Channel2_Angle(-30);
+////		Set_Channel3_Angle(-30);
+////		Set_Channel4_Angle(-30);
+//////		TIM_SetCompare4(TIM1,1900);
+//////		TIM_SetCompare3(TIM1,1900);
+//		Delay_ms(1000);
+//		Set_Channel1_Angle(0);
+//		Set_Channel2_Angle(0);
+//		Set_Channel3_Angle(0);
+//		Set_Channel4_Angle(0);
+//////		TIM_SetCompare4(TIM1,1850);
+//////		TIM_SetCompare3(TIM1,1850);
+////		Delay_ms(1000);
+////		Set_Channel1_Angle(30);
+////		Set_Channel2_Angle(30);
+////		Set_Channel3_Angle(30);
+////		Set_Channel4_Angle(30);
+//////		TIM_SetCompare4(TIM1,1800);
+//////		TIM_SetCompare3(TIM1,1800);
+//		Delay_ms(1000);
+//		//Set_Channel5_Throttle(50);
+//	}
 }
 /******************* (C) COPYRIGHT 2014 ANO TECH *****END OF FILE************/
 

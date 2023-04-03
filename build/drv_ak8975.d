@@ -30,6 +30,9 @@
 .\build\drv_ak8975.o: .\SRC\applications\Ano_Scheduler.h
 .\build\drv_ak8975.o: .\SRC\applications\BSP_Init.h
 .\build\drv_ak8975.o: .\SRC\applications\Ano_DT.h
+.\build\drv_ak8975.o: .\SRC\fc_specific\Ano_FlightCtrl.h
+.\build\drv_ak8975.o: .\SRC\fc_general\Ano_Filter.h
+.\build\drv_ak8975.o: .\SRC\fc_general\Ano_Math.h
 .\build\drv_ak8975.o: .\SRC\applications\Ano_Parameter.h
 .\build\drv_ak8975.o: .\SRC\applications\Ano_USB.h
 .\build\drv_ak8975.o: .\SRC\drivers\Drv_time.h

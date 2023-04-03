@@ -25,9 +25,9 @@
 .\build\ano_flyctrl.o: .\Libraries\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_wwdg.h
 .\build\ano_flyctrl.o: .\Libraries\STM32F4xx_StdPeriph_Driver\inc\misc.h
 .\build\ano_flyctrl.o: SRC\applications\Ano_DT.h
+.\build\ano_flyctrl.o: .\SRC\fc_specific\Ano_FlightCtrl.h
 .\build\ano_flyctrl.o: .\SRC\fc_general\Ano_FcData.h
 .\build\ano_flyctrl.o: .\SRC\fc_specific\config.h
-.\build\ano_flyctrl.o: .\SRC\fc_specific\Ano_FlightCtrl.h
 .\build\ano_flyctrl.o: .\SRC\fc_general\Ano_Filter.h
 .\build\ano_flyctrl.o: .\SRC\fc_general\Ano_Math.h
 .\build\ano_flyctrl.o: .\SRC\fc_general\ANO_IMU.h

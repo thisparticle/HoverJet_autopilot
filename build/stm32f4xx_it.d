@@ -29,6 +29,9 @@
 .\build\stm32f4xx_it.o: SRC\applications\Ano_Scheduler.h
 .\build\stm32f4xx_it.o: SRC\applications\BSP_Init.h
 .\build\stm32f4xx_it.o: SRC\applications\Ano_DT.h
+.\build\stm32f4xx_it.o: .\SRC\fc_specific\Ano_FlightCtrl.h
+.\build\stm32f4xx_it.o: .\SRC\fc_general\Ano_Filter.h
+.\build\stm32f4xx_it.o: .\SRC\fc_general\Ano_Math.h
 .\build\stm32f4xx_it.o: SRC\applications\Ano_Parameter.h
 .\build\stm32f4xx_it.o: SRC\applications\Ano_USB.h
 .\build\stm32f4xx_it.o: .\SRC\drivers\Drv_time.h
@@ -37,6 +40,4 @@
 .\build\stm32f4xx_it.o: .\SRC\drivers\Drv_Gps.h
 .\build\stm32f4xx_it.o: .\SRC\applications\include.h
 .\build\stm32f4xx_it.o: .\SRC\fc_specific\Ano_FlightDataCal.h
-.\build\stm32f4xx_it.o: .\SRC\fc_general\Ano_Filter.h
-.\build\stm32f4xx_it.o: .\SRC\fc_general\Ano_Math.h
 .\build\stm32f4xx_it.o: .\SRC\drivers\Drv_sbus.h

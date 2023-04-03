@@ -34,6 +34,7 @@
 .\build\ano_locctrl.o: .\SRC\applications\Ano_Scheduler.h
 .\build\ano_locctrl.o: .\SRC\applications\BSP_Init.h
 .\build\ano_locctrl.o: .\SRC\applications\Ano_DT.h
+.\build\ano_locctrl.o: .\SRC\fc_specific\Ano_FlightCtrl.h
 .\build\ano_locctrl.o: .\SRC\applications\Ano_Parameter.h
 .\build\ano_locctrl.o: .\SRC\applications\Ano_USB.h
 .\build\ano_locctrl.o: .\SRC\drivers\Drv_time.h
@@ -41,7 +42,6 @@
 .\build\ano_locctrl.o: .\SRC\drivers\Drv_usart.h
 .\build\ano_locctrl.o: .\SRC\drivers\Drv_Gps.h
 .\build\ano_locctrl.o: .\SRC\fc_general\Ano_Imu.h
-.\build\ano_locctrl.o: SRC\fc_specific\Ano_FlightCtrl.h
 .\build\ano_locctrl.o: .\SRC\applications\Ano_OF.h
 .\build\ano_locctrl.o: .\SRC\applications\Ano_OF_DecoFusion.h
 .\build\ano_locctrl.o: .\SRC\applications\Ano_UWB.h

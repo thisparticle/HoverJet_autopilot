@@ -25,8 +25,8 @@ extern _mc_st mc;
 /* Exported macro ------------------------------------------------------------*/
 /* Exported functions ------------------------------------------------------- */
 
-void Motor_Ctrl_Task(u8 dT_ms);
+void Motor_Ctrl_Task(u8 dT_ms,s16 *CH_N);
 
-extern s16 motor[MOTORSNUM];
+extern double motor[MOTORSNUM];
 #endif
 

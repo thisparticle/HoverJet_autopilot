@@ -29,3 +29,4 @@
 .\build\ano_imu.o: SRC\fc_general\Ano_Math.h
 .\build\ano_imu.o: SRC\fc_general\Ano_Filter.h
 .\build\ano_imu.o: .\SRC\applications\Ano_DT.h
+.\build\ano_imu.o: .\SRC\fc_specific\Ano_FlightCtrl.h

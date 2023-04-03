@@ -63,7 +63,7 @@ static void Loop_1000Hz(void)	//1ms执行一次
 	WCXY_Acc_Get_Task();
 	
 	/*飞行状态任务*/
-	Flight_State_Task(1,CH_N);
+	Flight_State_Task(1,CH_N);///这里要修改，直接将通道的输入量作为指令，而不是三轴的速度
 	
 	/*开关状态任务*/
 	Swtich_State_Task(1);
@@ -86,7 +86,7 @@ static void Loop_500Hz(void)	//2ms执行一次
 	Att_1level_Ctrl(2*1e-3f);
 	
 	/*电机输出控制*/
-	Motor_Ctrl_Task(2);	
+	Motor_Ctrl_Task(2,CH_N);	
 	
 	/*UWB数据获取*/
 	Ano_UWB_Get_Data_Task(2);	
@@ -119,10 +119,10 @@ static void Loop_100Hz(void)	//10ms执行一次
 	GPS_Data_Processing_Task(10);
 	
 	/*高度速度环控制*/
-	Alt_1level_Ctrl(10e-3f);
+	///Alt_1level_Ctrl(10e-3f);
 	
 	/*高度环控制*/
-	Alt_2level_Ctrl(10e-3f);
+	///Alt_2level_Ctrl(10e-3f);
 	
 	/*--*/	
 	AnoOF_DataAnl_Task(10);
@@ -146,7 +146,7 @@ static void Loop_50Hz(void)	//20ms执行一次
 //	/*UWB数据计算*/
 //	Ano_UWB_Data_Calcu_Task(20);
 	/*位置速度环控制*/
-	Loc_1level_Ctrl(20,CH_N);
+	///Loc_1level_Ctrl(20,CH_N);
 	/*OPMV检测是否掉线*/
 	OpenMV_Offline_Check(20);
 	/*OPMV色块追踪数据处理任务*/

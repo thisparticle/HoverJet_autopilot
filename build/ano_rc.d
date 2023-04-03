@@ -29,6 +29,9 @@
 .\build\ano_rc.o: SRC\applications\Ano_Scheduler.h
 .\build\ano_rc.o: SRC\applications\BSP_Init.h
 .\build\ano_rc.o: SRC\applications\Ano_DT.h
+.\build\ano_rc.o: .\SRC\fc_specific\Ano_FlightCtrl.h
+.\build\ano_rc.o: .\SRC\fc_general\Ano_Filter.h
+.\build\ano_rc.o: .\SRC\fc_general\Ano_Math.h
 .\build\ano_rc.o: SRC\applications\Ano_Parameter.h
 .\build\ano_rc.o: SRC\applications\Ano_USB.h
 .\build\ano_rc.o: .\SRC\drivers\Drv_time.h
@@ -37,10 +40,8 @@
 .\build\ano_rc.o: .\SRC\drivers\Drv_Gps.h
 .\build\ano_rc.o: .\SRC\applications\include.h
 .\build\ano_rc.o: SRC\applications\Ano_RC.h
-.\build\ano_rc.o: .\SRC\fc_general\Ano_Math.h
 .\build\ano_rc.o: .\SRC\drivers\Drv_icm20602.h
 .\build\ano_rc.o: .\SRC\fc_specific\Ano_MagProcess.h
-.\build\ano_rc.o: .\SRC\fc_general\Ano_Filter.h
 .\build\ano_rc.o: .\SRC\drivers\Drv_led.h
 .\build\ano_rc.o: .\SRC\drivers\Drv_sbus.h
 .\build\ano_rc.o: .\SRC\fc_general\Ano_Sensor_Basic.h
